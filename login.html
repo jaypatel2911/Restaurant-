@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            position: sticky;
+            background-size: cover;
+            height: 85vh;
+            width: 100vw;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* backdrop-filter:  blur(1px); */
+            /* background-color: #cad2c5; Background color */
+            background-image: url('https://t4.ftcdn.net/jpg/06/09/35/79/360_F_609357995_9f5MTF73kiu6UYAtpJZRT9BFWet4l3fX.jpg');
+        }
+        /* .signupbtn {
+            text-align: left;
+            margin-top: 20px;
+        } */
+        /* .signupbtn a {
+            padding: 10px 20px;
+            background-color: #52796f; /* Button background color */
+            /* border: none;
+            border-radius: 5px;
+            color: #fff; /* Button text color */
+           /* text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; */
+        /* }  */
+        .box a:hover {
+            color: brown; /* Hover background color */
+        }
+
+        .container {
+            position: relative;
+            top: 5vw;
+            max-width: 40vw;
+            margin: 100px auto;
+            padding: 40px;
+            border: 2px solid #2f3e46; /* Border color */
+            border-radius: 10px;
+            background-color: rgba(254, 249, 249, 0.288);
+            width: 80%;
+            justify-content: center;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: black; /* Heading color */
+        }
+        form {
+            margin-top: 20px;
+            /* box-shadow: black(5px); */
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: black; /* Label color */
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #354f52; /* Submit button background color */
+            border: none;
+            border-radius: 5px;
+            color: #fff; /* Submit button text color */
+            cursor: pointer;
+            background-color:#84a98c;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+            text-align: center;
+        }
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+        footer p {
+            color: #354f52; /* Footer text color */
+        }
+
+        /* Media query for smaller screens */
+        @media only screen and (max-width: 600px) {
+            .container {
+                max-width: 70%;
+            }
+        }
+        .box{
+            text-align: center;
+        }
+        .box a{
+            color: blue;
+            text-decoration: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="big">
+<div class="container">
+    <h2>Login</h2>
+    <form action="/auth/login" method="post" id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <input type="submit" value="Login">
+        <p class="error" id="error-message"></p>
+    </form>
+    <div class="box">
+
+        <span>Don't have an account?</span> <a href="/">Signup</a>
+    </div>
+
+</div>
+</div>
+</body>
+</html>

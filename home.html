@@ -1,0 +1,2473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>Krishna Restaurant</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.ico" rel="icon" />
+  <link href="assets/img/apple-touch-icon.ico" rel="apple-touch-icon" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i"
+    rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css" />
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+  <link href="index1.css" rel="stylesheet" />
+  <link rel="stylesheet" href="index1.css">
+</head>
+<style>
+  /*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+  body {
+    font-family: "Poppins", sans-serif;
+    color: #444444;
+    /* max-width: 1440px; */
+  }
+
+  a {
+    text-decoration: none;
+    color: #ffb03b;
+  }
+
+  a:hover {
+    color: #ffc56e;
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Satisfy", sans-serif;
+  }
+
+  .max-width-container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  /*--------------------------------------------------------------
+  # Back to top button
+  --------------------------------------------------------------*/
+  .back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #ffb03b;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    transition: all 0.4s;
+  }
+
+  .back-to-top i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+  }
+
+  .back-to-top:hover {
+    background: #ffc064;
+    color: #fff;
+  }
+
+  .back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /*--------------------------------------------------------------
+  # Top Bar
+  --------------------------------------------------------------*/
+  #topbar {
+    padding: 0;
+    font-size: 15px;
+    height: 50px;
+    transition: all 0.5s;
+    background: rgba(26, 24, 22, 0.8);
+    z-index: 996;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  #topbar.topbar-transparent {
+    background: transparent;
+  }
+
+  #topbar.topbar-scrolled {
+    top: -50px;
+  }
+
+  #topbar i {
+    color: #ffb03b;
+    line-height: 0;
+  }
+
+  #topbar i span {
+    color: #fff;
+    font-style: normal;
+    padding-left: 5px;
+  }
+
+  /*--------------------------------------------------------------
+  # Header
+  --------------------------------------------------------------*/
+  #header {
+    top: 50px;
+    height: 70px;
+    z-index: 997;
+    transition: all 0.5s;
+    padding: 10px 0;
+    background: rgba(26, 24, 22, 0.85);
+  }
+
+  #header.header-transparent {
+    background: transparent;
+  }
+
+  #header.header-scrolled {
+    top: 0;
+    background: rgba(26, 24, 22, 0.85);
+  }
+
+  #header .logo h1 {
+    font-size: 28px;
+    margin: 0;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: 3px;
+  }
+
+  #header .logo h1 a,
+  #header .logo h1 a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  #header .logo img {
+    padding: 0;
+    margin: 0;
+    max-height: 40px;
+  }
+
+  /*--------------------------------------------------------------
+  # Book a table button Menu
+  --------------------------------------------------------------*/
+  .book-a-table-btn {
+    background: #ffb03b;
+    color: #fff;
+    border-radius: 50px;
+    margin: 0 0 0 20px;
+    padding: 10px 25px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    white-space: nowrap;
+  }
+
+  .book-a-table-btn:hover {
+    background: #ffa012;
+    color: #fff;
+  }
+
+  @media (max-width: 992px) {
+    .book-a-table-btn {
+      margin: 0 15px 0 0;
+      padding: 8px 20px;
+      letter-spacing: 1px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .book-a-table-btn {
+      display: none;
+    }
+  }
+
+  /*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+  /**
+  * Desktop Navigation 
+  */
+  .navbar {
+    padding: 0;
+  }
+
+  .navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  .navbar li {
+    position: relative;
+  }
+
+  .navbar a,
+  .navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 10px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navbar a i,
+  .navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+  }
+
+  .navbar a:hover,
+  .navbar .active,
+  .navbar .active:focus,
+  .navbar li:hover>a {
+    color: #ffb03b;
+  }
+
+  .navbar .dropdown ul {
+    display: block;
+    position: absolute;
+    left: 24px;
+    top: calc(100% + 30px);
+    margin: 0;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    transition: 0.3s;
+    border-radius: 4px;
+  }
+
+  .navbar .dropdown ul li {
+    min-width: 200px;
+  }
+
+  .navbar .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #433f39;
+  }
+
+  .navbar .dropdown ul a i {
+    font-size: 12px;
+  }
+
+  .navbar .dropdown ul a:hover,
+  .navbar .dropdown ul .active:hover,
+  .navbar .dropdown ul li:hover>a {
+    color: #ffb03b;
+  }
+
+  .navbar .dropdown:hover>ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+
+  .navbar .dropdown .dropdown ul {
+    top: 0;
+    left: calc(100% - 30px);
+    visibility: hidden;
+  }
+
+  .navbar .dropdown .dropdown:hover>ul {
+    opacity: 1;
+    top: 0;
+    left: 100%;
+    visibility: visible;
+  }
+
+  @media (max-width: 1366px) {
+    .navbar .dropdown .dropdown ul {
+      left: -90%;
+    }
+
+    .navbar .dropdown .dropdown:hover>ul {
+      left: -100%;
+    }
+  }
+
+  /**
+  * Mobile Navigation 
+  */
+  .mobile-nav-toggle {
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    line-height: 0;
+    transition: 0.5s;
+  }
+
+  @media (max-width: 991px) {
+    .mobile-nav-toggle {
+      display: block;
+    }
+
+    .navbar ul {
+      display: none;
+    }
+  }
+
+  .navbar-mobile {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(39, 37, 34, 0.9);
+    transition: 0.3s;
+    z-index: 0;
+  }
+
+  .navbar-mobile .mobile-nav-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  .navbar-mobile ul {
+    display: block;
+    position: absolute;
+    top: 55px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    padding: 10px 0;
+    border-radius: 8px;
+    background-color: #fff;
+    overflow-y: auto;
+    transition: 0.3s;
+  }
+
+  .navbar-mobile a,
+  .navbar-mobile a:focus {
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #433f39;
+  }
+
+  .navbar-mobile a:hover,
+  .navbar-mobile .active,
+  .navbar-mobile li:hover>a {
+    color: #ffb03b;
+  }
+
+  .navbar-mobile .getstarted,
+  .navbar-mobile .getstarted:focus {
+    margin: 15px;
+  }
+
+  .navbar-mobile .dropdown ul {
+    position: static;
+    display: none;
+    margin: 10px 20px;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 1;
+    visibility: visible;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  }
+
+  .navbar-mobile .dropdown ul li {
+    min-width: 200px;
+  }
+
+  .navbar-mobile .dropdown ul a {
+    padding: 10px 20px;
+  }
+
+  .navbar-mobile .dropdown ul a i {
+    font-size: 12px;
+  }
+
+  .navbar-mobile .dropdown ul a:hover,
+  .navbar-mobile .dropdown ul .active:hover,
+  .navbar-mobile .dropdown ul li:hover>a {
+    color: #ffb03b;
+  }
+
+  .navbar-mobile .dropdown>.dropdown-active {
+    display: block;
+  }
+
+  /*--------------------------------------------------------------
+  # Hero Section
+  --------------------------------------------------------------*/
+  #hero {
+    width: 100%;
+    height: 100vh;
+    background-color: #dacdbc;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  #hero .carousel-item {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  #hero .carousel-item::before {
+    content: "";
+    background-color: rgba(12, 11, 10, 0.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  #hero .carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  #hero .carousel-content {
+    text-align: center;
+  }
+
+  #hero h2 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 48px;
+    font-weight: 700;
+  }
+
+  #hero h2 span {
+    color: #ffb03b;
+  }
+
+  #hero p {
+    width: 80%;
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+    margin: 0 auto 30px auto;
+    color: #fff;
+  }
+
+  #hero .carousel-inner .carousel-item {
+    transition-property: opacity;
+    background-position: center;
+  }
+
+  #hero .carousel-inner .carousel-item,
+  #hero .carousel-inner .active.carousel-item-start,
+  #hero .carousel-inner .active.carousel-item-end {
+    opacity: 0;
+  }
+
+  #hero .carousel-inner .active,
+  #hero .carousel-inner .carousel-item-next.carousel-item-start,
+  #hero .carousel-inner .carousel-item-prev.carousel-item-end {
+    opacity: 1;
+    transition: 0.5s;
+  }
+
+  #hero .carousel-inner .carousel-item-next,
+  #hero .carousel-inner .carousel-item-prev,
+  #hero .carousel-inner .active.carousel-item-start,
+  #hero .carousel-inner .active.carousel-item-end {
+    left: 0;
+    transform: translate3d(0, 0, 0);
+  }
+
+  #hero .carousel-control-next-icon,
+  #hero .carousel-control-prev-icon {
+    background: none;
+    font-size: 30px;
+    line-height: 0;
+    width: auto;
+    height: auto;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    transition: 0.3s;
+    color: rgba(255, 255, 255, 0.5);
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #hero .carousel-control-next-icon:hover,
+  #hero .carousel-control-prev-icon:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  #hero .carousel-indicators li {
+    cursor: pointer;
+  }
+
+  #hero .btn-menu,
+  #hero .btn-book {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+    line-height: 1;
+    margin: 0 10px;
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+    color: #fff;
+    border: 2px solid #ffb03b;
+  }
+
+  #hero .btn-menu:hover,
+  #hero .btn-book:hover {
+    background: #ffb03b;
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    #hero h2 {
+      font-size: 28px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #hero p {
+      width: 50%;
+    }
+
+    #hero .carousel-control-prev,
+    #hero .carousel-control-next {
+      width: 5%;
+    }
+  }
+
+  /*--------------------------------------------------------------
+  # Sections General
+  --------------------------------------------------------------*/
+  section {
+    padding: 60px 0;
+  }
+
+  .section-bg {
+    background-color: white;
+  }
+
+  .section-title {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  .section-title h2 {
+    margin: 15px 0 0 0;
+    font-size: 32px;
+    font-weight: 700;
+    color: #5f5950;
+  }
+
+  .section-title h2 span {
+    color: #ffb03b;
+  }
+
+  .section-title p {
+    margin: 15px auto 0 auto;
+    font-weight: 300;
+  }
+
+  @media (min-width: 1024px) {
+    .section-title p {
+      width: 50%;
+    }
+  }
+
+  /*--------------------------------------------------------------
+  # Breadcrumbs
+  --------------------------------------------------------------*/
+  .breadcrumbs {
+    padding: 20px 0;
+    background-color: #f2f1ef;
+    min-height: 40px;
+    margin-top: 120px;
+  }
+
+  @media (max-width: 992px) {
+    .breadcrumbs {
+      margin-top: 70px;
+    }
+  }
+
+  .breadcrumbs h2 {
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  @media (max-width: 992px) {
+    .breadcrumbs h2 {
+      margin: 0 0 10px 0;
+    }
+  }
+
+  .breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .breadcrumbs ol li+li {
+    padding-left: 10px;
+  }
+
+  .breadcrumbs ol li+li::before {
+    display: inline-block;
+    padding-right: 10px;
+    color: #6c757d;
+    content: "/";
+  }
+
+  @media (max-width: 768px) {
+    .breadcrumbs .d-flex {
+      display: block !important;
+    }
+
+    .breadcrumbs ol {
+      display: block;
+    }
+
+    .breadcrumbs ol li {
+      display: inline-block;
+    }
+  }
+
+  /*--------------------------------------------------------------
+  # About
+  --------------------------------------------------------------*/
+  .about {
+    background: linear-gradient(to bottom, #dacdbc, #fff);
+  }
+
+  .about .content {
+    padding: 0 80px;
+  }
+
+  .about .content h3 {
+    font-weight: 400;
+    font-size: 34px;
+    color: #5f5950;
+  }
+
+  .about .content h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 5px;
+  }
+
+  .about .content p {
+    font-size: 15px;
+    color: #848484;
+    text-align: justify;
+  }
+
+  .about .content ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .about .content ul li+li {
+    margin-top: 15px;
+  }
+
+  .about .content ul li {
+    position: relative;
+    padding-left: 26px;
+  }
+
+  .about .content ul i {
+    font-size: 20px;
+    color: #ffb03b;
+    position: absolute;
+    left: 0;
+    top: 2px;
+  }
+
+  .about .content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about .video-box {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 400px;
+    position: relative;
+
+  }
+
+  .about .video-box video {
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+    border-radius: 5%;
+    margin: 0px auto;
+    display: block;
+    background: white;
+  }
+
+  .about .play-btn {
+    width: 94px;
+    height: 94px;
+    background: radial-gradient(#ffb03b 50%, rgba(255, 176, 59, 0.4) 52%);
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    left: calc(50% - 47px);
+    top: calc(50% - 47px);
+    overflow: hidden;
+  }
+
+  .about .play-btn::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-40%) translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid #fff;
+    z-index: 100;
+    transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  .about .play-btn::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation: pulsate-btn 2s;
+    animation: pulsate-btn 2s;
+    -webkit-animation-direction: forwards;
+    animation-direction: forwards;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: steps;
+    animation-timing-function: steps;
+    opacity: 1;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 176, 59, 0.7);
+    top: -15%;
+    left: -15%;
+    background: rgba(198, 16, 0, 0);
+  }
+
+  .about .play-btn:hover::after {
+    border-left: 15px solid #ffb03b;
+    transform: scale(20);
+  }
+
+  .about .play-btn:hover::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-40%) translateY(-50%);
+    width: 0;
+    height: 0;
+    border: none;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid #fff;
+    z-index: 200;
+    -webkit-animation: none;
+    animation: none;
+    border-radius: 0;
+  }
+
+  @media (max-width: 1024px) {
+
+    .about .content,
+    .about .accordion-list {
+      padding: 0 16px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .about .content {
+      padding-top: 60px;
+    }
+
+    .about .accordion-list {
+      padding-bottom: 30px;
+    }
+  }
+
+  @-webkit-keyframes pulsate-btn {
+    0% {
+      transform: scale(0.6, 0.6);
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(1, 1);
+      opacity: 0;
+    }
+  }
+
+  @keyframes pulsate-btn {
+    0% {
+      transform: scale(0.6, 0.6);
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(1, 1);
+      opacity: 0;
+    }
+  }
+
+
+  /*--------------------------------------------------------------
+  # Menu Section
+  --------------------------------------------------------------*/
+
+  .menu #menu-flters {
+    padding: 0;
+    margin: 0 auto 0 auto;
+    list-style: none;
+    text-align: center;
+    border-radius: 50px;
+  }
+
+  .menu #menu-flters li {
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 12px 10px 12px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    color: #948c81;
+    margin-bottom: 10px;
+    transition: all ease-in-out 0.3s;
+    border-radius: 50px;
+    font-family: "Poppins", serif;
+  }
+
+  .menu #menu-flters li:hover,
+  .menu #menu-flters li.filter-active {
+    color: #fff;
+    background: #ffb03b;
+  }
+
+  .menu #menu-flters li:last-child {
+    margin-right: 0;
+  }
+
+  .menu .menu-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    float: left;
+    border: 5px solid rgba(196, 35, 35, 0.1);
+  }
+
+  .menu .menu-content {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+
+  }
+
+  .menu .menu-content::after {
+    content: "......................................................................" "...................................................................." "....................................................................";
+    position: absolute;
+    left: 20px;
+    right: 0;
+    top: -4px;
+    z-index: 1;
+    color: #dad8d4;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  }
+
+  .menu .menu-content a {
+    padding-right: 10px;
+    background: #fff;
+    position: relative;
+    z-index: 3;
+    font-weight: 700;
+    color: #ff9b08;
+  }
+
+  .menu .menu-content span {
+    background: #fff;
+    position: relative;
+    z-index: 3;
+    padding: 0 10px;
+    font-weight: 600;
+  }
+
+  .menu .menu-ingredients {
+    font-style: italic;
+    font-size: 14px;
+    font-family: "Comic Neue", sans-serif;
+    color: #948c81;
+  }
+
+  .menu .menu-item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .menu .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 16px 0;
+  }
+
+
+  /*--------------------------------------------------------------
+  # Events
+  --------------------------------------------------------------*/
+  .events {
+    /* background: url(events-bg.jpg) no-repeat; */
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+  }
+
+  .events::before {
+    content: "";
+    background-color: rgba(12, 11, 10, 0.8);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  .events .section-title h2 {
+    color: #fff;
+  }
+
+  .events .swiper-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: #7c7975 0px 3px 8px;
+
+  }
+
+  @media (min-width: 1024px) {
+    .events {
+      background-attachment: fixed;
+    }
+  }
+
+  .events .swiper-container {
+    overflow: hidden;
+    width: 90%;
+    height: 100%;
+  }
+
+  .events .swiper-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .events .swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .events .event-item {
+    color: #fff;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+
+  .events .event-item h3 {
+    font-weight: 600;
+    font-size: 26px;
+    color: #ffb03b;
+    margin-top: 32px;
+  }
+
+  .events .event-item .price {
+    font-size: 26px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .events .event-item .price span {
+    border-bottom: 2px solid #ffb03b;
+  }
+
+  .events .event-item ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .events .event-item ul li {
+    padding-bottom: 10px;
+  }
+
+  .events .event-item ul i {
+    font-size: 20px;
+    padding-right: 4px;
+    color: #ffb03b;
+  }
+
+  .events .event-item p:last-child {
+    margin-bottom: 0;
+  }
+
+  .events .event-item .content p {
+    text-align: justify;
+  }
+
+  .events .event-item .img-fluid {
+    box-shadow: #ffb03b 0px 3px 8px;
+    border-radius: 5%;
+    margin: auto 0px;
+    width: 480px;
+    height: 280px;
+
+  }
+
+  .events .swiper-pagination {
+    margin-top: 20px;
+    position: relative;
+  }
+
+  .events .swiper-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+  }
+
+  .events .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: #ffb03b;
+  }
+
+  /*--------------------------------------------------------------
+  # Book A Table
+  --------------------------------------------------------------*/
+  .book-a-table .email-form {
+    width: 100%;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+    padding: 30px;
+    background: #fff;
+  }
+
+  .book-a-table .email-form .form-group {
+    padding-bottom: 8px;
+  }
+
+  .book-a-table .email-form .validate {
+    display: none;
+    color: red;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+    font-size: 13px;
+  }
+
+  .book-a-table .email-form .error-message {
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+  }
+
+  .book-a-table .email-form .error-message br+br {
+    margin-top: 25px;
+  }
+
+  .book-a-table .email-form .sent-message {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+  }
+
+  .book-a-table .email-form .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .book-a-table .email-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #18d26e;
+    border-top-color: #eee;
+    -webkit-animation: animate-loading 1s linear infinite;
+    animation: animate-loading 1s linear infinite;
+  }
+
+  .book-a-table .email-form input,
+  .book-a-table .email-form textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+  }
+
+  .book-a-table .email-form input {
+    height: 44px;
+  }
+
+  .book-a-table .email-form textarea {
+    padding: 10px 12px;
+  }
+
+  .book-a-table .email-form button[type=reset] {
+    background: #ffb03b;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+  }
+
+  .book-a-table .email-form button[type=reset]:hover {
+    background: #ffa012;
+  }
+
+  /*--------------------------------------------------------------
+  # Gallery
+  --------------------------------------------------------------*/
+  .gallery {
+    padding-bottom: 80px;
+  }
+
+  .gallery .gallery-item {
+    overflow: hidden;
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+    border: groove 0.5em rgb(238, 177, 8);
+    border-radius: 5em;
+
+  }
+
+  .gallery .gallery-item img {
+    width: 90vw;
+    height: 15vw;
+    transition: all ease-in-out 0.4s;
+
+  }
+
+  .gallery .gallery-item:hover img {
+    transform: scale(1.1);
+  }
+
+  /*--------------------------------------------------------------
+  # Testimonials
+  --------------------------------------------------------------*/
+  .testimonials {
+    padding: 80px 0;
+    background: url("https://img.freepik.com/premium-photo/photo-closeup-shot-delicious-food_829042-81.jpg") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+  }
+
+  .testimonials::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(12, 11, 10, 0.7);
+  }
+
+  .testimonials .section-header {
+    margin-bottom: 40px;
+  }
+
+  .testimonials .testimonials-carousel,
+  .testimonials .testimonials-slider {
+    overflow: hidden;
+  }
+
+  .testimonials .testimonial-item {
+    text-align: center;
+    color: #fff;
+  }
+
+  .testimonials .testimonial-item .testimonial-img {
+    width: 100px;
+    border-radius: 50%;
+    border: 6px solid rgba(255, 255, 255, 0.15);
+    margin: 0 auto;
+  }
+
+  .testimonials .testimonial-item h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .testimonials .testimonial-item h4 {
+    font-size: 14px;
+    color: #ddd;
+    margin: 0 0 15px 0;
+    font-family: "Comic Neue", sans-serif;
+  }
+
+  .testimonials .testimonial-item .stars {
+    color: #ffb03b;
+    margin-bottom: 10px;
+  }
+
+  .testimonials .testimonial-item .quote-icon-left,
+  .testimonials .testimonial-item .quote-icon-right {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 26px;
+  }
+
+  .testimonials .testimonial-item .quote-icon-left {
+    display: inline-block;
+    left: -5px;
+    position: relative;
+  }
+
+  .testimonials .testimonial-item .quote-icon-right {
+    display: inline-block;
+    right: -5px;
+    position: relative;
+    top: 10px;
+  }
+
+  .testimonials .testimonial-item p {
+    font-style: italic;
+    margin: 0 auto 15px auto;
+    color: #eee;
+  }
+
+  .testimonials .swiper-pagination {
+    margin-top: 20px;
+    position: relative;
+  }
+
+  .testimonials .swiper-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+  }
+
+  .testimonials .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: #ffb03b;
+  }
+
+  @media (min-width: 992px) {
+    .testimonials .testimonial-item p {
+      width: 80%;
+    }
+  }
+
+  /*--------------------------------------------------------------
+  # Contact
+  --------------------------------------------------------------*/
+  .contact .info-wrap {
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+  }
+
+  .contact .info {
+    background: #fff;
+  }
+
+  .contact .info i {
+    font-size: 20px;
+    color: #ffb03b;
+    float: left;
+    width: 44px;
+    height: 44px;
+    background: #fff6e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .contact .info h4 {
+    padding: 0 0 0 60px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #433f39;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .contact .info p {
+    padding: 0 0 0 60px;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #7a7368;
+  }
+
+  .contact .info:hover i {
+    background: #ffb03b;
+    color: #fff;
+  }
+
+  .contact .email-form {
+    width: 100%;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+    padding: 30px;
+    background: #fff;
+  }
+
+  .contact .email-form .form-group {
+    padding-bottom: 8px;
+  }
+
+  .contact .email-form .error-message {
+    display: none;
+    color: #fff;
+    background: #ed3c0d;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+  }
+
+  .contact .email-form .sent-message {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+  }
+
+  .contact .email-form .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .contact .email-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #18d26e;
+    border-top-color: #eee;
+    -webkit-animation: animate-loading 1s linear infinite;
+    animation: animate-loading 1s linear infinite;
+  }
+
+  .contact .email-form input,
+  .contact .email-form textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+  }
+
+  .contact .email-form input {
+    height: 44px;
+  }
+
+  .contact .email-form textarea {
+    padding: 10px 12px;
+  }
+
+  .contact .email-form button[type=reset] {
+    background: #ffb03b;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+  }
+
+  .contact .email-form button[type=reset]:hover {
+    background: #ffa012;
+  }
+
+  @-webkit-keyframes animate-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes animate-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /*--------------------------------------------------------------
+  # Footer
+  --------------------------------------------------------------*/
+  #footer {
+    background: #35322d;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  #footer h3 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffb03b;
+    position: relative;
+    padding: 0;
+    margin: 0 0 15px 0;
+  }
+
+  #footer p {
+    font-size: 15;
+    font-style: italic;
+    padding: 0;
+    margin: 0 0 40px 0;
+  }
+
+  #footer .social-links {
+    margin: 0 0 40px 0;
+  }
+
+  #footer .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #46423b;
+    color: #fff;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+  }
+
+  #krish img {
+    display: inline-block;
+    height: 30vw;
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0), 0 6px 10px 0 rgb(0, 0, 0);
+    border-radius: 2vw;
+  }
+
+  #footer .social-links a:hover {
+    background: #ffb03b;
+  }
+
+  #footer .copyright {
+    margin: 0 0 5px 0;
+  }
+
+  #footer .credits {
+    font-size: 13px;
+  }
+</style>
+
+<body>
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center fixed-top topbar-transparent">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start">
+      <i class="bi bi-phone d-flex align-items-center"><span>+91 8780669047</span></i>
+      <i class="bi bi-clock ms-4 d-none d-lg-flex align-items-center"><span>Mon-Thu: 10:00 AM - 12:00 PM</span></i>
+      <i class="bi bi-clock ms-4 d-none d-lg-flex align-items-center"><span>Fri-Sun: 10:00 AM - 2:00 AM</span></i>
+    </div>
+  </section>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <div class="logo me-auto">
+        <h1><a href="home.html">Krishna</a></h1>
+      </div>
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#menu">Menu</a></li>
+          <li><a class="nav-link scrollto" href="#events">Events</a></li>
+          <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <!-- <li><a class="nav-link scrollto" href="login.html">Login</a></li> -->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- .navbar -->
+      <a href="#book-a-table" class="book-a-table-btn scrollto">Book a table</a>
+    </div>
+  </header>
+  <!-- End Header -->
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container max-width-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide 1 -->
+          <div class="carousel-item active"
+            style="background-image: url(https://www.zochagroup.com/wp-content/uploads/2019/05/highlight-room-1030x629.jpg)">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">
+                  <span>Krishna</span> Restaurant
+                </h2>
+                <p class="animate__animated animate__fadeInUp">
+                  Home Of The Best <strong> Indian </strong> Food.
+                </p>
+                <div>
+                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-item"
+            style="background-image: url(https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?cs=srgb&dl=pexels-chan-walrus-941861.jpg&fm=jpg)">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">
+                  Our Spirit<span> !</span>
+                </h2>
+                <p class="animate__animated animate__fadeInUp">
+                  Break from the ordinary and escape to
+                  <strong>Krishna</strong>, your personal slice of
+                  paradise! <strong>Krishna</strong> is open seven days a
+                  week, for in- person service as well as takeout and
+                  delivery.
+                </p>
+                <div>
+                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-item"
+            style="background-image: url(https://img.stablecog.com/insecure/1920w/aHR0cHM6Ly9iLnN0YWJsZWNvZy5jb20vMTIxZTcxNmUtYjFmNC00MzkzLTkxOWQtYzVhNjM4MjY2MTU5LmpwZWc.webp)">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">
+                  Specialty <span>!</span>
+                </h2>
+                <p class="animate__animated animate__fadeInUp">
+                  Find The Perfect Recipe.
+                </p>
+                <div>
+                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Menu</a>
+                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Table</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero -->
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container-fluid max-width-container">
+        <div class="row">
+          <div class="col-lg-5 align-items-stretch video-box" id="krish">
+            <img src="https://i.ytimg.com/vi/IniWlrSI1qA/maxresdefault.jpg" alt="" style="width: 80vh;"
+              style="margin-top: 8000px;">
+          </div>
+          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
+            <div class="content">
+              <h3>Discover <strong>OUR HISTORY</strong></h3>
+              <p>
+                Krishna is an Indian restaurant in Gandhinagar, Ahmedabad and
+                Mehsana. Our shief offer differnt type of Indian food.
+              </p>
+              <p class="fst-italic">WHAT you will taste at our place :</p>
+              <ul>
+                <li>
+                  <i class="bx bx-check-double"></i> Gujarati.
+                </li>
+                <li><i class="bx bx-check-double"></i> Kathiavadi.</li>
+                <li><i class="bx bx-check-double"></i> Panjabi.</li>
+                <li><i class="bx bx-check-double"></i> South-Indian.</li>
+                <li><i class="bx bx-check-double"></i> Chinese.</li>
+                <li><i class="bx bx-check-double"></i> Snacks.</li>
+              </ul>
+              <p>
+                Choose your Food. and it is served after dipping in a wheel of parmigiano.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End About Section -->
+    <!-- start menu Section -->
+    <section id="menu" class="menu section-bg">
+      <div class="container max-width-container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Menu</h2>
+          <p>Check Our Tasty Menu</p>
+        </div>
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="menu-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-drinks">Drinks</li>
+              <li data-filter=".filter-salads">Snacks</li>
+              <li data-filter=".filter-specialty">Specialty</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-6 menu-item filter-drinks">
+            <img src="https://www.cubesnjuliennes.com/wp-content/uploads/2021/04/Mango-Smoothie-Recipe.jpg"
+              class="menu-img" alt="" />
+            <div class="menu-item-details">
+              <div class="menu-content">
+                <a href="#"> Mango slice</a><span>70.Rs</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 menu-item filter-specialty">
+            <img src="https://www.livingsmartandhealthy.com/wp-content/uploads/2023/06/paneer-butter-masala-recipe.jpg"
+              class="menu-img" alt="" />
+            <div class="menu-item-details">
+              <div class="menu-content">
+                <a href="#">Panir Butter Masala</a><span>200.Rs</span>
+              </div>
+              <div class="menu-ingredients">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 menu-item filter-drinks">
+            <img
+              src="https://cdn1.foodviva.com/static-content/food-images/juice-recipes/homemade-orange-juice-recipe/homemade-orange-juice-recipe.jpg"
+              class="menu-img" alt="" />
+            <div class="menu-item-details">
+              <div class="menu-content">
+                <a href="#">Fresh Orange Juice</a><span>100.Rs</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 menu-item filter-salads">
+            <img src="https://www.indore.online/cdn/shop/articles/Khaman-Dhokla_-_Copy_803x.jpg?v=1657537355"
+              class="menu-img" alt="" />
+            <div class="menu-item-details">
+              <div class="menu-content">
+                <a href="#">Khaman</a>
+                <span>175.Rs</span>
+              </div>
+              <div class="menu-ingredients">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 menu-item filter-specialty">
+            <img
+              src="https://thumbs.dreamstime.com/b/homemade-dosa-dhosa-masala-plain-maisuri-ghee-roast-chutney-sambar-banana-leaf-isolated-south-indian-breakfast-205193390.jpg"
+              class="menu-img" alt="" />
+            <div class="menu-item-details">
+              <div class="menu-content">
+                <a href="#">Dhosa</a><span>120.Rs</span>
+              </div>
+              <div class="menu-ingredients">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 menu-item filter-drinks">
+            <img src="https://www.cookwithmanali.com/wp-content/uploads/2022/06/Nimbu-Paani.jpg" class="menu-img"
+              alt="" />
+            <div class="menu-item-details">
+              <div class="menu-content">
+                <a href="#">Shikanji</a><span>40.Rs</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 menu-item filter-salads">
+            <img src="https://static.toiimg.com/thumb/53723352.cms?imgsize=212203&width=800&height=800" class="menu-img"
+              alt="" />
+            <div class="menu-item-details">
+              <div class="menu-content">
+                <a href="#">Samosa</a><span>50.Rs</span>
+              </div>
+              <div class="menu-ingredients">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 menu-item filter-salads">
+            <img src="https://www.subbuskitchen.com/wp-content/uploads/2014/02/Kandavi_Final1-1024x686.jpg"
+              class="menu-img" alt="" />
+            <div class="menu-item-details">
+              <div class="menu-content">
+                <a href="#">Khandvi</a><span>150.Rs</span>
+              </div>
+              <div class="menu-ingredients">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 menu-item filter-specialty">
+            <img
+              src="https://img-global.cpcdn.com/recipes/90da6123069afe1e/680x482cq70/gujarati-undhiyu-recipe-main-photo.jpg"
+              class="menu-img" alt="" />
+            <div class="menu-item-details">
+              <div class="menu-content">
+                <a href="#">Undhiyu</a><span>250.Rs</span>
+              </div>
+              <div class="menu-ingredients">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 menu-item filter-specialty">
+            <img src="https://www.puvi.co/uploaded_images/1687505275.png" class="menu-img" alt="" />
+            <div class="menu-item-details">
+              <div class="menu-content">
+                <a href="#">Dhokli</a><span>300.Rs</span>
+              </div>
+              <div class="menu-ingredients">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Menu Section -->
+    <!-- ======= Events Section ======= -->
+    <section id="events" class="events">
+      <div class="swiper-container max-width-container">
+        <div class="section-title">
+          <h2>Organize Your <span>Events</span> in our Restaurant</h2>
+        </div>
+        <div class="events-slider swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="row event-item">
+                <div class="col-lg-6 d-lg-flex align-items-center">
+                  <img
+                    src="https://media.designcafe.com/wp-content/uploads/2021/12/20173151/new-year-decoration-for-lighting-up-your-home.jpg"
+                    class="img-fluid" alt="" />
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content">
+                  <h3>Birthday Celebrations</h3>
+                  <div class="price">
+                    <p><span>250000.Rs</span></p>
+                  </div>
+                  <p class="fst-italic">
+                    Hosting a Birthday Party at our restaurant is a great way
+                    to bring a large group together for the ultimate
+                    celebration. You can meet with our event manager to plan
+                    all the celebration details:
+                  </p>
+                  <ul>
+                    <li><i class="bi bi-check-circle"></i> Food.</li>
+                    <li><i class="bi bi-check-circle"></i> Drinks.</li>
+                    <li>
+                      <i class="bi bi-check-circle"></i> Decorations and party
+                      layout.
+                    </li>
+                  </ul>
+                  <p>
+                    We will make sure you have a fantastic birthday party.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+            <div class="swiper-slide">
+              <div class="row event-item">
+                <div class="col-lg-6 d-lg-flex align-items-center">
+                  <img src="https://memo.thevendry.com/wp-content/uploads/2022/06/The-Midway-SF-1024x683.jpeg"
+                    class="img-fluid" alt="" />
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content">
+                  <h3>Holiday Parties & More</h3>
+                  <div class="price">
+                    <p><span>30000.Rs</span></p>
+                  </div>
+                  <p class="fst-italic">
+                    The holidays are a hectic time of year. With all the
+                    responsibilities that come along with hosting, the
+                    holidays can come and go without much fun at all. Spend
+                    more time with your family and less time in the kitchen by
+                    having your holiday celebration at Pasta Cosi. There are
+                    many more types of events that we can host at Pasta Cosi
+                    like:
+                  </p>
+                  <ul>
+                    <li>
+                      <i class="bi bi-check-circle"></i> Graduation parties.
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle"></i> Engagement parties.
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle"></i> Retirement parties.
+                    </li>
+                  </ul>
+                  <p>We will make sure you have a fantastic event party.</p>
+                </div>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+            <div class="swiper-slide">
+              <div class="row event-item">
+                <div class="col-lg-6 d-lg-flex align-items-center">
+                  <img
+                    src="https://dallasdesigndistrict.com/assets/img/images/blog/gallery/00001dec%20on%20dragon%20remix.jpg"
+                    class="img-fluid" alt="" />
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content">
+                  <h3>Baby & Bridal Showers</h3>
+                  <div class="price">
+                    <p><span>20000.Rs</span></p>
+                  </div>
+                  <p class="fst-italic">
+                    Both of these events are the perfect way to celebrate your
+                    amazing news! We can create a stress-free way to celebrate
+                    your special occasion for an intimate gathering with
+                    friends and family! We will take care of:
+                  </p>
+                  <ul>
+                    <li><i class="bi bi-check-circle"></i> Set up.</li>
+                    <li><i class="bi bi-check-circle"></i> Food.</li>
+                    <li><i class="bi bi-check-circle"></i> Drinks.</li>
+                  </ul>
+                  <p>
+                    while you focus on the invites, party favors, and
+                    decorations and other details for your event.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <!-- End Events Section -->
+    <!-- ======= Book A Table Section ======= -->
+    <section id="book-a-table" class="book-a-table">
+      <div class="container max-width-container">
+        <div class="section-title">
+          <h2>Book a <span>Table</span></h2>
+        </div>
+        <form role="form" class="email-form">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4"
+                data-msg="Please enter at least 4 chars" />
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                data-rule="email" data-msg="Please enter a valid email" />
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone"
+                data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <input type="date" name="date" class="form-control" id="date" placeholder="Date" data-rule="minlen:4"
+                data-msg="Please enter at least 4 chars" />
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <input type="time" class="form-control" name="time" id="time" placeholder="Time" data-rule="minlen:4"
+                data-msg="Please enter at least 4 chars" />
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <input type="number" class="form-control" name="people" id="people" placeholder="Number of people"
+                data-rule="minlen:1" data-msg="Please enter at least 1 chars" />
+              <div class="validate"></div>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+            <div class="validate"></div>
+          </div>
+          <div class="mb-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">
+              Your booking request was sent. We will call back or send an
+              Email to confirm your reservation. Thank you!
+            </div>
+          </div>
+          <div class="text-center">
+            <button type="reset">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- End Book A Table Section -->
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container-fluid max-width-container">
+        <div class="section-title">
+          <h2>Some photos from <span>Our Restaurant</span></h2>
+        </div>
+        <div class="row g-2">
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <div class="gallery-item">
+              <a
+                href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsVxaZ0qywq7elNdxx29zhE6K3xrgTnu8QOg1QTwkmzYObRL-f_9hQ1O77-OuvykcA6uc&usqp=CAU">
+                <img
+                  src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/30/54/b2/bidri-ambience.jpg?w=1200&h=-1&s=1"
+                  alt="" class="img-fluid" />
+              </a>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <div class="gallery-item">
+              <a href="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg">
+                <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg" alt="" class="img-fluid" />
+              </a>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <div class="gallery-item">
+              <a href="gallery-3.jpg">
+                <img
+                  src="https://media.istockphoto.com/id/1079901206/photo/3d-render-of-luxury-restaurant-interior.jpg?s=612x612&w=0&k=20&c=kKj5Uw0ZpuWKX8ZX6eXuKGc1sP86fMjIbZJFbWl9-ZM="
+                  alt="" class="img-fluid" />
+              </a>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <div class="gallery-item">
+              <a href="gallery-4.jpg">
+                <img src="https://images.indianexpress.com/2023/10/fusion-recipes.jpg" alt="" class="img-fluid" />
+              </a>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <div class="gallery-item">
+              <a href="gallery-5.jpg">
+                <img src="https://miro.medium.com/v2/resize:fit:1400/1*IpkQR903yL2pzfeJ05JDLA.jpeg" alt=""
+                  class="img-fluid" />
+              </a>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <div class="gallery-item">
+              <a href="gallery-6.jpg">
+                <img src="https://recipes.net/wp-content/uploads/2021/03/shrikhand-recipe.jpg" alt=""
+                  class="img-fluid" />
+              </a>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <div class="gallery-item">
+              <a href="gallery-7.jpg">
+                <img src="https://images4.alphacoders.com/276/276908.jpg" alt="" class="img-fluid" />
+              </a>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <div class="gallery-item">
+              <a href="gallery-8.jpg">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWG3zMlm9xz_-4G79HGIo7okA4gnMRqrIDrg&usqp=CAU"
+                  alt="" class="img-fluid" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Gallery Section -->
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container position-relative max-width-container">
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <br>
+                <br>
+                <br>
+                <h3>Nirmal Patel</h3>
+                <h4>Ceo &amp; Founder</h4>
+                <br>
+                <p>
+                  <i class="bx"></i>
+                  B-Tech(CSE) From Nirma University
+                  <i class="bx "></i>
+                </p>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <br>
+                <br>
+                <br>
+                <h3>Jay Patel</h3>
+                <h4>Co-Founder</h4>
+                <p>
+                  <i class="bx"></i>
+                <p>B-tech(CSE) From Nirma University</p>
+                <i class="bx "></i>
+                </p>
+              </div>
+            </div>
+            <!-- End testimonial item -->
+            <!-- End testimonial item -->
+            <!-- End testimonial item -->
+
+            <!-- <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="mehdi.jpg" class="testimonial-img" alt="" />
+                <h3>Mehdi Jelassi</h3>
+                <h4>Entrepreneur</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  For years the quality is excellent this place does not
+                  change but the menu is constantly enriched.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div> -->
+            <!-- End testimonial item -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <!-- End Testimonials Section -->
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container max-width-container">
+        <div class="section-title">
+          <h2><span>Contact</span> Us</h2>
+        </div>
+        <div class="container mt-5 max-width-container">
+          <div class="info-wrap">
+            <div class="row">
+              <div class="col-lg-3 col-md-6 info">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>Nirma University<br />Sarkhej-Gandhinagar Highway, Chandlodia, Gota, Ahmedabad, Gujarat 382481.</p>
+              </div>
+              <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                <i class="bi bi-clock"></i>
+                <h4>Open Hours:</h4>
+                <p>Monday-Thursday:<br />10:00 AM - 11:30 PM</p>
+                <p>Friday-Sunday:<br />10:00 AM - 2:00 AM</p>
+              </div>
+              <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>nirmalspatel3003@gmail.com</p>
+              </div>
+              <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+91 8758758446</p>
+              </div>
+            </div>
+          </div>
+          <form role="form" class="email-form">
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required />
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required />
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required />
+            </div>
+            <div class="form-group mt-3">
+              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            </div>
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">
+                Your message has been sent. Thank you!
+              </div>
+            </div>
+            <div class="text-center">
+              <button type="reset">Send Message</button>
+            </div>
+          </form>
+        </div>
+    </section>
+    <!-- End Contact Section -->
+  </main>
+  <!-- End #main -->
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Krishna</h3>
+      <p>
+        Krishna is specialized in Indian Food with Panjabi, Gujarati, Snacks &
+        South-Indian
+      </p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/share/HwDGbm2YhpuuS44i/?mibextid=qi2Omg" class="facebook"><i
+            class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/patel_nirmal_2005?igsh=cWx4Y2YxanBmNWo4" class="instagram"><i
+            class="bx bxl-instagram"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>Krishna Restaurant</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by
+        <a href="https://www.linkedin.com/profile/view?id=ADoAAEwt5tsBuEDHoyJbMbntzks5Re4snbSOews&trk=nav_responsive_tab_profile_pic"
+          target="_blank">Nirmal_Patel</a>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <!-- <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script> -->
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="script.js"></script>
+  <script src="app.js"></script>
+  <script>
+    /* */
+    (function () {
+      "use strict";
+
+      /**
+       * Easy selector helper function
+       */
+      const select = (el, all = false) => {
+        el = el.trim()
+        if (all) {
+          return [...document.querySelectorAll(el)]
+        } else {
+          return document.querySelector(el)
+        }
+      }
+
+      /**
+       * Easy event listener function
+       */
+      const on = (type, el, listener, all = false) => {
+        let selectEl = select(el, all)
+        if (selectEl) {
+          if (all) {
+            selectEl.forEach(e => e.addEventListener(type, listener))
+          } else {
+            selectEl.addEventListener(type, listener)
+          }
+        }
+      }
+
+      /**
+       * Easy on scroll event listener 
+       */
+      const onscroll = (el, listener) => {
+        el.addEventListener('scroll', listener)
+      }
+
+      /**
+       * Navbar links active state on scroll
+       */
+      let navbarlinks = select('#navbar .scrollto', true)
+      const navbarlinksActive = () => {
+        let position = window.scrollY + 200
+        navbarlinks.forEach(navbarlink => {
+          if (!navbarlink.hash) return
+          let section = select(navbarlink.hash)
+          if (!section) return
+          if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+            navbarlink.classList.add('active')
+          } else {
+            navbarlink.classList.remove('active')
+          }
+        })
+      }
+      window.addEventListener('load', navbarlinksActive)
+      onscroll(document, navbarlinksActive)
+
+      /**
+       * Scrolls to an element with header offset
+       */
+      const scrollto = (el) => {
+        let header = select('#header')
+        let offset = header.offsetHeight
+
+        let elementPos = select(el).offsetTop
+        window.scrollTo({
+          top: elementPos - offset,
+          behavior: 'smooth'
+        })
+      }
+
+      /**
+       * Toggle .header-scrolled class to #header when page is scrolled
+       */
+      let selectHeader = select('#header')
+      let selectTopbar = select('#topbar')
+      if (selectHeader) {
+        const headerScrolled = () => {
+          if (window.scrollY > 100) {
+            selectHeader.classList.add('header-scrolled')
+            if (selectTopbar) {
+              selectTopbar.classList.add('topbar-scrolled')
+            }
+          } else {
+            selectHeader.classList.remove('header-scrolled')
+            if (selectTopbar) {
+              selectTopbar.classList.remove('topbar-scrolled')
+            }
+          }
+        }
+        window.addEventListener('load', headerScrolled)
+        onscroll(document, headerScrolled)
+      }
+
+      /**
+       * Back to top button
+       */
+      let backtotop = select('.back-to-top')
+      if (backtotop) {
+        const toggleBacktotop = () => {
+          if (window.scrollY > 100) {
+            backtotop.classList.add('active')
+          } else {
+            backtotop.classList.remove('active')
+          }
+        }
+        window.addEventListener('load', toggleBacktotop)
+        onscroll(document, toggleBacktotop)
+      }
+
+      /**
+       * Mobile nav toggle
+       */
+      on('click', '.mobile-nav-toggle', function (e) {
+        select('#navbar').classList.toggle('navbar-mobile')
+        this.classList.toggle('bi-list')
+        this.classList.toggle('bi-x')
+      })
+
+      /**
+       * Mobile nav dropdowns activate
+       */
+      on('click', '.navbar .dropdown > a', function (e) {
+        if (select('#navbar').classList.contains('navbar-mobile')) {
+          e.preventDefault()
+          this.nextElementSibling.classList.toggle('dropdown-active')
+        }
+      }, true)
+
+      /**
+       * Scrool with ofset on links with a class name .scrollto
+       */
+      on('click', '.scrollto', function (e) {
+        if (select(this.hash)) {
+          e.preventDefault()
+
+          let navbar = select('#navbar')
+          if (navbar.classList.contains('navbar-mobile')) {
+            navbar.classList.remove('navbar-mobile')
+            let navbarToggle = select('.mobile-nav-toggle')
+            navbarToggle.classList.toggle('bi-list')
+            navbarToggle.classList.toggle('bi-x')
+          }
+          scrollto(this.hash)
+        }
+      }, true)
+
+      /**
+       * Scroll with ofset on page load with hash links in the url
+       */
+      window.addEventListener('load', () => {
+        if (window.location.hash) {
+          if (select(window.location.hash)) {
+            scrollto(window.location.hash)
+          }
+        }
+      });
+
+      /**
+       * Hero carousel indicators
+       */
+      let heroCarouselIndicators = select("#hero-carousel-indicators")
+      let heroCarouselItems = select('#heroCarousel .carousel-item', true)
+
+      heroCarouselItems.forEach((item, index) => {
+        (index === 0) ?
+          heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "' class='active'></li>" :
+          heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "'></li>"
+      });
+
+      /**
+       * Menu isotope and filter
+       */
+      window.addEventListener('load', () => {
+        let menuContainer = select('.menu-container');
+        if (menuContainer) {
+          let menuIsotope = new Isotope(menuContainer, {
+            itemSelector: '.menu-item',
+            layoutMode: 'fitRows'
+          });
+
+          let menuFilters = select('#menu-flters li', true);
+
+          on('click', '#menu-flters li', function (e) {
+            e.preventDefault();
+            menuFilters.forEach(function (el) {
+              el.classList.remove('filter-active');
+            });
+            this.classList.add('filter-active');
+
+            menuIsotope.arrange({
+              filter: this.getAttribute('data-filter')
+            });
+
+          }, true);
+        }
+
+      });
+
+      /**
+       * Testimonials slider
+       */
+      new Swiper('.events-slider', {
+        speed: 600,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        },
+        slidesPerView: 'auto',
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          clickable: true
+        }
+      });
+
+
+      /**
+       * Testimonials slider
+       */
+      new Swiper('.testimonials-slider', {
+        speed: 600,
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        },
+        slidesPerView: 'auto',
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          clickable: true
+        }
+      });
+
+    })()
+  </script>
+</body>
+
+</html>
