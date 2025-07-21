@@ -54,7 +54,5 @@ You will need to have **Node.js** and **npm** (Node Package Manager) installed o
 
 ##  Creators
 
-This project was designed and developed by:
-
-- **Nirmal Patel**: CEO & Founder
-- **Jay Patel**: Co-Founder
+This project was designed and developed by: Jay patel
+ 
